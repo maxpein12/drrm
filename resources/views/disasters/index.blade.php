@@ -40,29 +40,21 @@
                     </div>
 
 
+                    @foreach ($disasters as $disaster)
                     <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
-                        <div class="card-header">Typhoons</div>
+                        <div class="card-header">{{ $disaster->disaster_name }}</div>
                         <div class="card-body">
-                          <h5 class="card-title"><img src="{{ asset('assets/icons8-lock-48.png') }}" alt=""></h5>
-                          <p class="card-text">Click the Arrow to choose. <img src="https://www.svgrepo.com/show/507168/arrow-right-circle.svg" alt=""></p>
+                            <h5 class="card-title" id="card-title-{{ $loop->index }}">
+                                @if ($loop->index == 0)
+                                    <img src="{{ asset('assets/icons8-open-lock-48.png') }}" alt="">
+                                @else
+                                    <img src="{{ asset('assets/icons8-lock-48.png') }}" alt="">
+                                @endif
+                            </h5>
+                            <p class="card-text">Click the Arrow to choose. <a href="{{ url('disasters/'.$disaster->disaster_name.'/scenario1') }}"><img src="https://www.svgrepo.com/show/507168/arrow-right-circle.svg" alt=""></a></p>
                         </div>
-                      </div>
-
-                      <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
-                        <div class="card-header">Typhoons</div>
-                        <div class="card-body">
-                          <h5 class="card-title"><img src="{{ asset('assets/icons8-lock-48.png') }}" alt=""></h5>
-                          <p class="card-text">Click the Arrow to choose. <img src="https://www.svgrepo.com/show/507168/arrow-right-circle.svg" alt=""></p>
-                        </div>
-                      </div>
-                      
-                      <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
-                        <div class="card-header">Typhoons</div>
-                        <div class="card-body">
-                          <h5 class="card-title"><img src="{{ asset('assets/icons8-lock-48.png') }}" alt=""></h5>
-                          <p class="card-text">Click the Arrow to choose. <img src="https://www.svgrepo.com/show/507168/arrow-right-circle.svg" alt=""></p>
-                        </div>
-                      </div>
+                    </div>
+                @endforeach
             </div>
         </section>
         <!-- Footer-->

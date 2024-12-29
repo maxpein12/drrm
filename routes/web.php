@@ -22,3 +22,7 @@ Route::post('/students', [StudentsController::class, 'store'])->name('students.s
 Route::get('/disasters', [DisasterController::class, 'index'])->name('disasters.index');
 
 Route::post('/login', [LoginController::class, 'login'])->name('login');
+
+Route::get('/disasters/{disaster_name}/scenario1', function ($disaster_name) {
+    return view('disasters.'.$disaster_name.'.scenario1');
+})->name('disasters.scenario1');

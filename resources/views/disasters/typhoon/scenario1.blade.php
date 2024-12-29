@@ -1,0 +1,1 @@
+scenario 1 dito ng typhoon
