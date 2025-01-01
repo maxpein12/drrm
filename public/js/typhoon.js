@@ -16,7 +16,7 @@ const timerElement6 = document.getElementById("timer-6");
 const timerElement7 = document.getElementById("timer-7");
 const timerElement8 = document.getElementById("timer-8");
 const correctAnswer1 = 3; // Correct answer for scenario 1 (Signal 3)
-const correctAnswer2 = "correct"; // Correct answer for scenario 2
+const correctAnswer2 = ["Flashlight", "Extra batteries", "First-aid kit", "Canned goods", "Bottled water"]; // Correct answer for scenario 2
 const correctAnswer3 = "correct"; // Correct answer for scenario 3
 const correctAnswer4 = "correct"; // Correct answer for scenario 4 (Move to a stronger building)
 const correctAnswer5 = "correct"; // Correct answer for scenario 5
@@ -26,6 +26,14 @@ const correctAnswer8 = "correct"; // Correct answer for scenario 8
 let timerStart = new Date();
 let timerInterval;
 let elapsedTime = 0;  // Track elapsed time globally
+let scenario1Attempts = 0;
+let scenario2Attempts = 0;
+let scenario3Attempts = 0;
+let scenario4Attempts = 0;
+let scenario5Attempts = 0;
+let scenario6Attempts = 0;
+let scenario7Attempts = 0;
+let scenario8Attempts = 0;
 
 // Timer function to format and display time
 function formatTime(seconds) {
@@ -33,6 +41,9 @@ function formatTime(seconds) {
     const remainingSeconds = seconds % 60;
     return `${minutes < 10 ? '0' : ''}${minutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
 }
+
+
+
 
 // Start the timer
 function startTimer() {
@@ -49,9 +60,17 @@ function startTimer() {
         timerElement6.textContent = formatTime(elapsedSeconds);
         timerElement7.textContent = formatTime(elapsedSeconds);
         timerElement8.textContent = formatTime(elapsedSeconds);
+       
     }, 1000);
+   
+    
+     
+
 }
 
+document.addEventListener('DOMContentLoaded', function() {
+    speakScenarioText(1);
+  });
 // Stop the timer
 function stopTimer() {
     clearInterval(timerInterval);
@@ -74,31 +93,55 @@ const submitBtn = document.getElementById("submit-btn");
 submitBtn.addEventListener("click", () => {
     const selectedValue = parseInt(slider.value);
     if (selectedValue === correctAnswer1) {
+        scenario1Attempts++;
         showPopup("Correct! Moving to the next scenario.");
         setTimeout(() => {
             scenario1.style.display = "none";
             scenario2.style.display = "flex";
             
+          
         }, 2000);
-        
+       
     } else {
+        scenario1Attempts++;
         showPopup("Wrong answer. Try again!");
     }
 });
 
 // Button options for Scenario 2
-const buttonOptions = document.querySelectorAll("#scenario-2 .btn-option");
-buttonOptions.forEach(button => {
-    button.addEventListener("click", () => {
-        const answer = button.getAttribute("data-answer");
-        if (answer === correctAnswer2) {
-            showPopup("Correct! Moving to the next scenario.");
-            setTimeout(() => {
-                scenario2.style.display = "none";
-                scenario3.style.display = "flex";
-            }, 2000);
+// Button options for Scenario 2
+const checkboxes = document.querySelectorAll("#scenario-2 input[type='checkbox']");
+let selectedAnswers = [];
+
+checkboxes.forEach(checkbox => {
+    checkbox.addEventListener("change", () => {
+        const answer = checkbox.getAttribute("data-answer");
+
+        if (checkbox.checked) {
+            selectedAnswers.push(answer);
         } else {
-            showPopup("Wrong answer. Try again!");
+            selectedAnswers = selectedAnswers.filter(a => a !== answer);
+        }
+
+        console.log("Selected answers:", selectedAnswers);
+        console.log("Correct answers:", correctAnswer2);
+
+        if (selectedAnswers.length === 5) {
+            if (correctAnswer2.every(a => selectedAnswers.includes(a))) {
+                console.log("Correct answer detected!");
+                scenario2Attempts++;
+                showPopup("Correct! Moving to the next scenario.");
+                setTimeout(() => {
+                    scenario2.style.display = "none";
+                    scenario3.style.display = "flex";
+                   
+                }, 2000);
+               
+            } else {
+                console.log("Incorrect answer detected!");
+                scenario2Attempts++;
+                showPopup("Wrong answer. Try again.");
+            }
         }
     });
 });
@@ -109,12 +152,14 @@ buttonOptions3.forEach(button => {
     button.addEventListener("click", () => {
         const answer = button.getAttribute("data-answer");
         if (answer === correctAnswer3) {
+            scenario3Attempts++;
             showPopup("Correct! Moving to the next scenario.");
             setTimeout(() => {
                 scenario3.style.display = "none";
                 scenario4.style.display = "flex";
             }, 2000);
         } else {
+            scenario3Attempts++;
             showPopup("Wrong answer. Try again!");
         }
     });
@@ -126,12 +171,14 @@ buttonOptions4.forEach(button => {
     button.addEventListener("click", () => {
         const answer = button.getAttribute("data-answer");
         if (answer === correctAnswer4) {
+            scenario4Attempts++;
             showPopup("Correct! Moving to the next scenario.");
             setTimeout(() => {
                 scenario4.style.display = "none";
                 scenario5.style.display = "flex";
             }, 2000);
         } else {
+            scenario4Attempts++;
             showPopup("Wrong answer. Try again!");
         }
     });
@@ -143,12 +190,14 @@ buttonOptions5.forEach(button => {
     button.addEventListener("click", () => {
         const answer = button.getAttribute("data-answer");
         if (answer === correctAnswer5) {
+            scenario5Attempts++;
             showPopup("Correct! Moving to the next scenario.");
             setTimeout(() => {
                 scenario5.style.display = "none";
                 scenario6.style.display = "flex";
             }, 2000);
         } else {
+            scenario5Attempts++;
             showPopup("Wrong answer. Try again!");
         }
     });
@@ -160,12 +209,14 @@ buttonOptions6.forEach(button => {
     button.addEventListener("click", () => {
         const answer = button.getAttribute("data-answer");
         if (answer === correctAnswer6) {
+            scenario6Attempts++;
             showPopup("Correct! Moving to the next scenario.");
             setTimeout(() => {
                 scenario6.style.display = "none";
                 scenario7.style.display = "flex";
             }, 2000);
         } else {
+            scenario6Attempts++;
             showPopup("Wrong answer. Try again!");
         }
     });
@@ -177,12 +228,14 @@ buttonOptions7.forEach(button => {
     button.addEventListener("click", () => {
         const answer = button.getAttribute("data-answer");
         if (answer === correctAnswer7) {
+            scenario7Attempts++;
             showPopup("Correct! Moving to the next scenario.");
             setTimeout(() => {
                 scenario7.style.display = "none";
                 scenario8.style.display = "flex";
             }, 2000);
         } else {
+            scenario7Attempts++;
             showPopup("Wrong answer. Try again!");
         }
     });
@@ -194,13 +247,15 @@ buttonOptions8.forEach(button => {
     button.addEventListener("click", () => {
         const answer = button.getAttribute("data-answer");
         if (answer === correctAnswer3) {
+            scenario8Attempts++;
             showPopup("Basta Congrats Message toh tas yung time: " + formatTime(elapsedTime));
             setTimeout(() => {
                 scenario8.style.display = "none";
                 scenario8.style.display = "flex";
-            }, 2000);
+            }, 10000);
             stopTimer();
         } else {
+            scenario8Attempts++;
             showPopup("Wrong answer. Try again!");
         }
     });
@@ -222,3 +277,6 @@ function showPopup(message) {
 
 // Start the timer initially
 startTimer();
+
+
+

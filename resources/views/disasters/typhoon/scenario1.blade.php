@@ -14,7 +14,7 @@
             <button class="btn btn-gray rounded" id="home-btn">Home</button>
         </div>
     </nav>
-
+    <div id="scenario-1-trigger" style="display: none;"></div>
     <!-- Main Container -->
     <div class="container mt-5" style="width: 100%; height: 100%; max-width: 1600px; padding: 0 30px;">
         <!-- Scenario 1 -->
@@ -27,16 +27,16 @@
                 <h2 class="mb-4">It’s a Sunday morning. You’re having breakfast with your family while watching the news.</h2>
                 <h2 class="mb-4"> The news announces that heavy rains and very strong winds are expected; damage to houses and trees is possible. Winds of 89–117 km/h are expected within 18 hours. </h2>
 
-                <p class="typewriter">What typhoon signal number does this represent?</p>
+                <p class="typewriter">{{ $scenario1->question }}</p>
 
 
                 <div class="choice-slider mt-4">
                     <div class="choice-images" id="choice-images">
-                        <img class="choice-image" id="choice-1" src="assets/sig1.jpg" alt="Signal 1">
-                        <img class="choice-image" id="choice-2" src="assets/sig2.jpg" alt="Signal 2">
-                        <img class="choice-image" id="choice-3" src="assets/sig3.jpg" alt="Signal 3">
-                        <img class="choice-image" id="choice-4" src="assets/sig4.jpg" alt="Signal 4">
-                        <img class="choice-image" id="choice-5" src="assets/sig5.jpg" alt="Signal 5">
+                        <img class="choice-image" id="choice-1" src="{{ asset('assets/sig1.jpg') }}" alt="Signal 1">
+                        <img class="choice-image" id="choice-2" src="{{ asset('assets/sig2.jpg') }}" alt="Signal 2">
+                        <img class="choice-image" id="choice-3" src="{{ asset('assets/sig3.jpg') }}" alt="Signal 3">
+                        <img class="choice-image" id="choice-4" src="{{ asset('assets/sig4.jpg') }}" alt="Signal 4">
+                        <img class="choice-image" id="choice-5" src="{{ asset('assets/sig5.jpg') }}" alt="Signal 5">
                     </div>
                 </div>
 
@@ -62,15 +62,40 @@
             <div class="scenario-content" id="scenario-content-2">
                 <h2 class="mb-4">You open the kitchen cabinet and find 10 items. You need to pick 5 essential items to include in your emergency survival kit.
                 </h2>
-                <p class="typewriter">Which 5 items will you choose for your emergency bag?</p>
+                <p class="typewriter">{{ $scenario2->question }}</p>
 
                 <div class="button-options mt-4">
-                    <button class="btn-option" data-answer="wrong">Stay indoors</button>
-                    <button class="btn-option" data-answer="wrong">Go to the market</button>
-                    <button class="btn-option" data-answer="correct">Go to an evacuation center</button>
-                    <button class="btn-option" data-answer="wrong">Stay at the beach</button>
+                    <input type="checkbox" id="flashlight" name="flashlight" value="Flashlight" data-answer="Flashlight">
+                    <label for="flashlight"> <img src="{{ asset('assets/flashlight.png') }}" alt=""> Flashlight</label><br>
+
+                    <input type="checkbox" id="slippers" name="slippers" value="Slippers" data-answer="Slippers">
+                    <label for="slippers"> <img src="{{ asset('assets/slippers.png') }}" alt=""> Slippers</label><br>
+
+                    <input type="checkbox" id="extra-batteries" name="extra-batteries" value="Extra Batteries" data-answer="Extra batteries">
+                    <label for="extra-batteries"><img src="{{ asset('assets/battery.png') }}" alt=""> Extra Batteries</label><br>
+
+                    <input type="checkbox" id="first-aid-kit" name="first-aid-kit" value="First-aid Kit" data-answer="First-aid kit">
+                    <label for="first-aid-kit"><img src="{{ asset('assets/first-aid-kit.png') }}" alt=""> First-aid Kit</label><br>
                    
+                    <input type="checkbox" id="canned-goods" name="canned-goods" value="Canned goods" data-answer="Canned goods">
+                    <label for="canned-goods"><img src="{{ asset('assets/canned-goods.png') }}" alt=""> Canned goods</label><br>
+
+                    <input type="checkbox" id="deck-of-cards" name="deck-of-cards" value="Deck of Cards" data-answer="Deck of Cards">
+                    <label for="deck-of-cards"><img src="{{ asset('assets/deck-of-cards.png') }}" alt=""> Deck of Cards</label><br>
+
+                    <input type="checkbox" id="blanket" name="blanket" value="Blanket" data-answer="Blanket">
+                    <label for="blanket"><img src="{{ asset('assets/blanket.png') }}" alt=""> Blanket</label><br>
+
+                    <input type="checkbox" id="pillow" name="pillow" value="Pillow" data-answer="Pillow">
+                    <label for="pillow"><img src="{{ asset('assets/pillow.png') }}" alt=""> Pillow</label><br>
+
+                    <input type="checkbox" id="teddy-bear" name="teddy-bear" value="Teddy Bear" data-answer="Teddy bear">
+                    <label for="teddy-bear"><img src="{{ asset('assets/teddy-bear.png') }}" alt=""> Teddy Bear</label><br>
+
+                    <input type="checkbox" id="bottled-water" name="bottled-water" value="Bottled Water" data-answer="Bottled water">
+                    <label for="bottled-water"><img src="{{ asset('assets/bottled-water.png') }}" alt=""> Bottled Water</label><br>
                 </div>
+            
             </div>
         </div>
 
@@ -83,8 +108,7 @@
             <div class="scenario-content" id="scenario-content-3">
                 <h2 class="mb-4">You’re now in your bedroom. After preparing the family emergency bag, your mother asked you to  remember the emergency hotlines and agencies you would call during a typhoon.
                 </h2>
-                <p class="typewriter">Which government agency should you NOT call in case of an emergency? 
-
+                <p class="typewriter">{{ $scenario3->question }}
                 </p>
 
                 <div class="button-options mt-4">
@@ -103,14 +127,15 @@
                 <img src="{{ asset('assets/news.gif') }}" alt="scenario-4" class="img-fluid">
             </div>
             <div class="scenario-content" id="scenario-content-4">
-                <h2 class="mb-4">Scenario 4: Typhoon Worsens</h2>
-                <p class="typewriter">What should you do if the typhoon worsens and you're at the evacuation center?</p>
+                <h2 class="mb-4">Scenario 4: Now, you have the emergency hotlines and know the agencies you can call. You must keep your communication open.
+                    </h2>
+                <p class="typewriter">{{ $scenario4->question }}</p>
 
                 <div class="button-options mt-4">
-                    <button class="btn-option" data-answer="correct">Move to a stronger building</button>
-                    <button class="btn-option" data-answer="wrong">Stay in the current building</button>
-                    <button class="btn-option" data-answer="wrong">Go outside to check the wind</button>
-                    <button class="btn-option" data-answer="wrong">Ignore the situation</button>
+                    <button class="btn-option" data-answer="wrong">Wait for the typhoon to pass before checking your phone.</button>
+                    <button class="btn-option" data-answer="correct">Make sure your phone is fully charged and has enough credit.</button>
+                    <button class="btn-option" data-answer="wrong">Unplug your phone to prevent damage.</button>
+                    <button class="btn-option" data-answer="wrong">Only check your phone once you hear the emergency sirens.</button>
                 </div>
             </div>
         </div>
@@ -122,14 +147,17 @@
                 <img src="{{ asset('assets/news.gif') }}" alt="scenario-5" class="img-fluid">
             </div>
             <div class="scenario-content" id="scenario-content-5">
-                <h2 class="mb-4">Scenario 5: Typhoon Worsens</h2>
-                <p class="typewriter">What should you do if the typhoon worsens and you're at the evacuation center?</p>
+                <h2 class="mb-4">Scenario 5: You’re in the living room preparing to evacuate with your family, but you notice water leaking from the ceiling. To prevent further damage, you need to select and use the correct tools from the items available.</h2>
+                <p class="typewriter">{{ $scenario5->question }}</p>
+                <div>
+                    1. Ladder <br> 2. Waterproof sealant <br> 3. Bucket
 
+                </div>
                 <div class="button-options mt-4">
-                    <button class="btn-option" data-answer="correct">Move to a stronger building</button>
-                    <button class="btn-option" data-answer="wrong">Stay in the current building</button>
-                    <button class="btn-option" data-answer="wrong">Go outside to check the wind</button>
-                    <button class="btn-option" data-answer="wrong">Ignore the situation</button>
+                    <button class="btn-option" data-answer="wrong">1-2-3</button>
+                    <button class="btn-option" data-answer="wrong">3-2-1</button>
+                    <button class="btn-option" data-answer="wrong">2-1-3</button>
+                    <button class="btn-option" data-answer="correct">3-1-2</button>
                 </div>
             </div>
         </div>
@@ -141,14 +169,25 @@
                 <img src="{{ asset('assets/news.gif') }}" alt="scenario-6" class="img-fluid">
             </div>
             <div class="scenario-content" id="scenario-content-6">
-                <h2 class="mb-4">Scenario 6: Typhoon Worsens</h2>
-                <p class="typewriter">What should you do if the typhoon worsens and you're at the evacuation center?</p>
+                <h2 class="mb-4">Scenario 6: As you and your family
+                    stay indoors, you hear a
+                    knock on the front door.
+                    The local government has
+                    issued an order for your
+                    family to evacuate
+                    immediately due to the risk of flooding. Before
+                    heading to the evacuation
+                    center, you need to ensure
+                    your house is ready to be
+                    left behind.
+                    </h2>
+                <p class="typewriter">{{ $scenario6->question }}</p>
 
                 <div class="button-options mt-4">
-                    <button class="btn-option" data-answer="correct">Move to a stronger building</button>
-                    <button class="btn-option" data-answer="wrong">Stay in the current building</button>
-                    <button class="btn-option" data-answer="wrong">Go outside to check the wind</button>
-                    <button class="btn-option" data-answer="wrong">Ignore the situation</button>
+                    <button class="btn-option" data-answer="wrong">Leave the doors unlocked for easier access when you return.</button>
+                    <button class="btn-option" data-answer="wrong">Open all windows to let air circulate.</button>
+                    <button class="btn-option" data-answer="correct">Turn off all electrical appliances and the main power switch. Lock all doors.</button>
+                    <button class="btn-option" data-answer="wrong">Secure important documents and valuables in a paper envelope.</button>
                 </div>
             </div>
         </div>
@@ -160,14 +199,23 @@
                 <img src="{{ asset('assets/news.gif') }}" alt="scenario-5" class="img-fluid">
             </div>
             <div class="scenario-content" id="scenario-content-7">
-                <h2 class="mb-4">Scenario 7: Typhoon Worsens</h2>
-                <p class="typewriter">What should you do if the typhoon worsens and you're at the evacuation center?</p>
+                <h2 class="mb-4">Scenario 7: You and your family have
+                    arrived at the evacuation
+                    center to stay safe from
+                    the typhoon and flooding.
+                    To ensure everyone's
+                    comfort and safety, you
+                    need to understand the
+                    basic rules and procedures
+                    while staying in the
+                    evacuation center</h2>
+                <p class="typewriter">{{ $scenario7->question }}</p>
 
                 <div class="button-options mt-4">
-                    <button class="btn-option" data-answer="correct">Move to a stronger building</button>
-                    <button class="btn-option" data-answer="wrong">Stay in the current building</button>
-                    <button class="btn-option" data-answer="wrong">Go outside to check the wind</button>
-                    <button class="btn-option" data-answer="wrong">Ignore the situation</button>
+                    <button class="btn-option" data-answer="wrong">Find a comfortable spot and rest immediately.</button>
+                    <button class="btn-option" data-answer="correct">Help register your family with the evacuation center authorities.</button>
+                    <button class="btn-option" data-answer="wrong">Take food and supplies without asking.</button>
+                    <button class="btn-option" data-answer="wrong">Start mingling with other evacuees to make friends.</button>
                 </div>
             </div>
         </div>
@@ -179,18 +227,20 @@
                 <img src="{{ asset('assets/news.gif') }}" alt="scenario-8" class="img-fluid">
             </div>
             <div class="scenario-content" id="scenario-content-8">
-                <h2 class="mb-4">Scenario 8: Typhoon Worsens</h2>
-                <p class="typewriter">What should you do if the typhoon worsens and you're at the evacuation center?</p>
+                <h2 class="mb-4">Scenario 8: The typhoon is over, and
+                    you’re about to step
+                    outside.</h2>
+                <p class="typewriter">{{ $scenario8->question }}</p>
 
                 <div class="button-options mt-4">
-                    <button class="btn-option" data-answer="correct">Move to a stronger building</button>
-                    <button class="btn-option" data-answer="wrong">Stay in the current building</button>
-                    <button class="btn-option" data-answer="wrong">Go outside to check the wind</button>
-                    <button class="btn-option" data-answer="wrong">Ignore the situation</button>
+                    <button class="btn-option" data-answer="correct">Stay away from fallen trees, wrecked cars, and debris.</button>
+                    <button class="btn-option" data-answer="wrong">Walk through the debris to see if you can help others.</button>
+                    <button class="btn-option" data-answer="wrong">Climb over the fallen tree to get a better view</button>
+                    <button class="btn-option" data-answer="wrong">Pick up the debris and move it to clear the road.</button>
                 </div>
             </div>
         </div>
-
+    
         <!-- Popup -->
         <div id="popup" class="popup">
             <p id="popup-message"></p>
