@@ -35,6 +35,31 @@ let scenario6Attempts = 0;
 let scenario7Attempts = 0;
 let scenario8Attempts = 0;
 
+function getHintMessage(scenario) {
+    const hints = {
+        "Scenario 1": "For heavy rains and very strong winds, the correct answer lies between Signal No.2 and Signal No.4.",
+        "Scenario 2": "Focus on items that will help you survive—those that provide light, food, water, or medical help during emergencies.",
+        "Scenario 3": "The Department of Transportation deals only with transportation-related concerns",
+        "Scenario 4": "Power outages may occur, so charging your devices is important",
+        "Scenario 5": "Start by controlling the water and ensure you can reach the leak safely.",
+        "Scenario 6": "There's a risk of electrical fires or shocks during flooding.",
+        "Scenario 7": "By doing this step, the authorities know you and your family are safe and can provide you with proper assistance and supplies",
+        "Scenario 8": "Hazards like fallen trees and wrecked cars can be dangerous."
+    };
+
+    return hints[scenario];
+}
+
+
+function showHint(scenario) {
+    const hintMessage = getHintMessage(scenario);
+    popupMessage.textContent = hintMessage;
+    popup.classList.add("active");
+
+    setTimeout(() => {
+        popup.classList.remove("active");
+    }, 5000);
+}
 // Timer function to format and display time
 function formatTime(seconds) {
     const minutes = Math.floor(seconds / 60);
@@ -102,9 +127,13 @@ submitBtn.addEventListener("click", () => {
           
         }, 2000);
        
-    } else {
+    }  else {
         scenario1Attempts++;
-        showPopup("Wrong answer. Try again!");
+        if (scenario1Attempts > 2) {
+            showHint("Scenario 1");
+        } else {
+            showPopup("Wrong answer. Try again!");
+        }
     }
 });
 
@@ -137,10 +166,13 @@ checkboxes.forEach(checkbox => {
                    
                 }, 2000);
                
-            } else {
-                console.log("Incorrect answer detected!");
+            }else {
                 scenario2Attempts++;
-                showPopup("Wrong answer. Try again.");
+                if (scenario2Attempts > 2) {
+                    showHint("Scenario 2");
+                } else {
+                    showPopup("Wrong answer. Try again.");
+                }
             }
         }
     });
@@ -160,7 +192,11 @@ buttonOptions3.forEach(button => {
             }, 2000);
         } else {
             scenario3Attempts++;
-            showPopup("Wrong answer. Try again!");
+            if (scenario3Attempts > 2) {
+                showHint("Scenario 3");
+            } else {
+                showPopup("Wrong answer. Try again!");
+            }
         }
     });
 });
@@ -179,7 +215,11 @@ buttonOptions4.forEach(button => {
             }, 2000);
         } else {
             scenario4Attempts++;
-            showPopup("Wrong answer. Try again!");
+            if (scenario4Attempts > 2) {
+                showHint("Scenario 4");
+            } else {
+                showPopup("Wrong answer. Try again!");
+            }
         }
     });
 });
@@ -198,7 +238,11 @@ buttonOptions5.forEach(button => {
             }, 2000);
         } else {
             scenario5Attempts++;
-            showPopup("Wrong answer. Try again!");
+            if (scenario5Attempts > 2) {
+                showHint("Scenario 5");
+            } else {
+                showPopup("Wrong answer. Try again!");
+            }
         }
     });
 });
@@ -217,7 +261,11 @@ buttonOptions6.forEach(button => {
             }, 2000);
         } else {
             scenario6Attempts++;
-            showPopup("Wrong answer. Try again!");
+            if (scenario6Attempts > 2) {
+                showHint("Scenario 6");
+            } else {
+                showPopup("Wrong answer. Try again!");
+            }
         }
     });
 });
@@ -236,7 +284,11 @@ buttonOptions7.forEach(button => {
             }, 2000);
         } else {
             scenario7Attempts++;
-            showPopup("Wrong answer. Try again!");
+            if (scenario7Attempts > 2) {
+                showHint("Scenario 7");
+            } else {
+                showPopup("Wrong answer. Try again!");
+            }
         }
     });
 });
@@ -248,7 +300,7 @@ buttonOptions8.forEach(button => {
         const answer = button.getAttribute("data-answer");
         if (answer === correctAnswer3) {
             scenario8Attempts++;
-            showPopup("Basta Congrats Message toh tas yung time: " + formatTime(elapsedTime));
+            showcongrats("Basta Congrats Message toh tas yung time: " + formatTime(elapsedTime));
             setTimeout(() => {
                 scenario8.style.display = "none";
                 scenario8.style.display = "flex";
@@ -256,7 +308,11 @@ buttonOptions8.forEach(button => {
             stopTimer();
         } else {
             scenario8Attempts++;
-            showPopup("Wrong answer. Try again!");
+            if (scenario8Attempts > 2) {
+                showHint("Scenario 8");
+            } else {
+                showPopup("Wrong answer. Try again!");
+            }
         }
     });
 });
@@ -273,6 +329,12 @@ function showPopup(message) {
     setTimeout(() => {
         popup.classList.remove("active");
     }, 2000);
+}
+function showcongrats(message) {
+    popupMessage.textContent = message;
+    popup.classList.add("active");
+
+    
 }
 
 // Start the timer initially
