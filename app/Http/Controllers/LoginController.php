@@ -21,7 +21,8 @@ class LoginController extends Controller
         // dd($student); // add this line to see if the student is found
     
         if ($student && Hash::check($password, $student->password)) {
-            session(['logged_in_user' => $student->name]);
+            session(['logged_in_user' => $student->name, 'logged_in_user_id' => $student->id]);
+            // dd(session('logged_in_user_id')); // add this line to check the value
             return redirect()->route('disasters.index');
         }
     

@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Typhoon Disaster Escape Room</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/typhoon.css') }}">
@@ -11,8 +12,9 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-gray">
         <div class="container-fluid">
-            <button class="btn btn-gray rounded" id="home-btn">Home</button>
+            <button class="btn btn-gray rounded" id="home-btn">Home </button>
         </div>
+        
     </nav>
     <div id="scenario-1-trigger" style="display: none;"></div>
     <!-- Main Container -->
@@ -64,7 +66,7 @@
                 </h2>
                 <p class="typewriter">{{ $scenario2->question }}</p>
 
-                <div class="button-options mt-4">
+                <div class="button-options mt-4" id = "scenario-2-choices">
                     <input type="checkbox" id="flashlight" name="flashlight" value="Flashlight" data-answer="Flashlight">
                     <label for="flashlight"> <img src="{{ asset('assets/flashlight.png') }}" alt=""> Flashlight</label><br>
 
@@ -112,10 +114,10 @@
                 </p>
 
                 <div class="button-options mt-4">
-                    <button class="btn-option" data-answer="wrong">Philippine Red Cross</button>
-                    <button class="btn-option" data-answer="wrong">Philippine Coast Guard</button>
-                    <button class="btn-option" data-answer="correct">Department of Transportation</button>
-                    <button class="btn-option" data-answer="wrong">NDRRMC</button>
+                    <button class="btn-option" data-answer="wrong" id="scenario3Choices">Philippine Red Cross</button>
+                    <button class="btn-option" data-answer="wrong" id="scenario3Choices">Philippine Coast Guard</button>
+                    <button class="btn-option" data-answer="correct" id="scenario3Choices">Department of Transportation</button>
+                    <button class="btn-option" data-answer="wrong" id="scenario3Choices">NDRRMC</button>
                 </div>
             </div>
         </div>
@@ -247,7 +249,12 @@
             
         </div>
     </div>
+    <script>
+           const userId = {{ session('logged_in_user_id') }};
+      </script>
 
+
+    <script src="https://cdn.jsdelivr.net/npm/axios@0.27.2/dist/axios.min.js"></script>
     <script src="{{ asset('js/typhoon.js') }}"></script>
 </body>
 </html>

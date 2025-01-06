@@ -4,7 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentsController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\DisasterController;
+use App\Http\Controllers\ProgressController;
 use App\Models\Scenario;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -36,3 +38,6 @@ Route::get('/disasters/{disaster_name}/scenario1', function ($disaster_name) {
 
     return view('disasters.'.$disaster_name.'.scenario1', compact('scenario1', 'scenario2', 'scenario3', 'scenario4', 'scenario5', 'scenario6', 'scenario7', 'scenario8'));
 })->name('disasters.scenario1');
+
+
+Route::post('/api/progress', [ProgressController::class, 'store'])->name('progress.store');

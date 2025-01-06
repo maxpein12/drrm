@@ -1,4 +1,7 @@
 // DOM Elements
+// import axios from 'axios';
+
+
 const scenario1 = document.getElementById("scenario-1");
 const scenario2 = document.getElementById("scenario-2");
 const scenario3 = document.getElementById("scenario-3");
@@ -115,11 +118,19 @@ slider.addEventListener("input", () => {
 
 // Submit for Scenario 1
 const submitBtn = document.getElementById("submit-btn");
+const scenario1Choices = document.getElementById("slider");
 submitBtn.addEventListener("click", () => {
+
     const selectedValue = parseInt(slider.value);
     if (selectedValue === correctAnswer1) {
         scenario1Attempts++;
         showPopup("Correct! Moving to the next scenario.");
+        scenario1Choices.disabled = true;
+
+            setTimeout(() => {
+                scenario1Choices.disabled = false;
+            }, 2000);
+
         setTimeout(() => {
             scenario1.style.display = "none";
             scenario2.style.display = "flex";
@@ -131,8 +142,19 @@ submitBtn.addEventListener("click", () => {
         scenario1Attempts++;
         if (scenario1Attempts > 2) {
             showHint("Scenario 1");
+            scenario1Choices.disabled = true;
+            setTimeout(() => {
+                scenario1Choices.disabled = false;
+            }, 5000);
         } else {
             showPopup("Wrong answer. Try again!");
+            scenario1Choices.disabled = true;
+            setTimeout(() => {
+                scenario1Choices.disabled = false;
+            }, 2000);
+            
+           
+
         }
     }
 });
@@ -141,6 +163,7 @@ submitBtn.addEventListener("click", () => {
 // Button options for Scenario 2
 const checkboxes = document.querySelectorAll("#scenario-2 input[type='checkbox']");
 let selectedAnswers = [];
+// const scenario2Choices = 
 
 checkboxes.forEach(checkbox => {
     checkbox.addEventListener("change", () => {
@@ -160,6 +183,10 @@ checkboxes.forEach(checkbox => {
                 console.log("Correct answer detected!");
                 scenario2Attempts++;
                 showPopup("Correct! Moving to the next scenario.");
+                document.querySelector(".button-options").style.pointerEvents = "none";
+            setTimeout(() => {
+                document.querySelector(".button-options").style.pointerEvents = "auto";
+            }, 2000);
                 setTimeout(() => {
                     scenario2.style.display = "none";
                     scenario3.style.display = "flex";
@@ -170,8 +197,19 @@ checkboxes.forEach(checkbox => {
                 scenario2Attempts++;
                 if (scenario2Attempts > 2) {
                     showHint("Scenario 2");
+                    document.querySelector(".button-options").style.pointerEvents = "none";
+
+            setTimeout(() => {
+                document.querySelector(".button-options").style.pointerEvents = "auto";
+            }, 5000);
+
                 } else {
                     showPopup("Wrong answer. Try again.");
+                    document.querySelector(".button-options").style.pointerEvents = "none";
+
+            setTimeout(() => {
+                document.querySelector(".button-options").style.pointerEvents = "auto";
+            }, 2000);
                 }
             }
         }
@@ -180,12 +218,22 @@ checkboxes.forEach(checkbox => {
 
 // Button options for Scenario 3
 const buttonOptions3 = document.querySelectorAll("#scenario-3 .btn-option");
+// const scenario3Choices = document.getElementById("scenario3Choices");
 buttonOptions3.forEach(button => {
     button.addEventListener("click", () => {
         const answer = button.getAttribute("data-answer");
         if (answer === correctAnswer3) {
             scenario3Attempts++;
             showPopup("Correct! Moving to the next scenario.");
+            buttonOptions3.forEach(button => {
+                button.disabled = true;
+            });
+
+            setTimeout(() => {
+                buttonOptions3.forEach(button => {
+                    button.disabled = false;
+                });
+            }, 2000);
             setTimeout(() => {
                 scenario3.style.display = "none";
                 scenario4.style.display = "flex";
@@ -194,8 +242,26 @@ buttonOptions3.forEach(button => {
             scenario3Attempts++;
             if (scenario3Attempts > 2) {
                 showHint("Scenario 3");
+                buttonOptions3.forEach(button => {
+                    button.disabled = true;
+                });
+
+                setTimeout(() => {
+                    buttonOptions3.forEach(button => {
+                        button.disabled = false;
+                    });
+                }, 5000);
             } else {
                 showPopup("Wrong answer. Try again!");
+                buttonOptions3.forEach(button => {
+                    button.disabled = true;
+                });
+
+                setTimeout(() => {
+                    buttonOptions3.forEach(button => {
+                        button.disabled = false;
+                    });
+                }, 2000);
             }
         }
     });
@@ -209,6 +275,14 @@ buttonOptions4.forEach(button => {
         if (answer === correctAnswer4) {
             scenario4Attempts++;
             showPopup("Correct! Moving to the next scenario.");
+            buttonOptions4.forEach(button => {
+                button.disabled = true;
+            });
+            setTimeout(() => {
+                buttonOptions4.forEach(button => {
+                    button.disabled = false;
+                }, 2000);
+            })
             setTimeout(() => {
                 scenario4.style.display = "none";
                 scenario5.style.display = "flex";
@@ -217,8 +291,24 @@ buttonOptions4.forEach(button => {
             scenario4Attempts++;
             if (scenario4Attempts > 2) {
                 showHint("Scenario 4");
+                buttonOptions4.forEach(button => {
+                    button.disabled = true;
+                });
+                setTimeout(() => {
+                    buttonOptions4.forEach(button => {
+                        button.disabled = false;
+                    });
+                }, 5000);
             } else {
                 showPopup("Wrong answer. Try again!");
+                buttonOptions4.forEach(button => {
+                    button.disabled = true;
+                });
+                setTimeout(() => {
+                    buttonOptions4.forEach(button => {
+                        button.disabled = false;
+                    });
+                }, 2000);
             }
         }
     });
@@ -232,6 +322,14 @@ buttonOptions5.forEach(button => {
         if (answer === correctAnswer5) {
             scenario5Attempts++;
             showPopup("Correct! Moving to the next scenario.");
+            buttonOptions5.forEach(button => {
+                button.disabled = true;
+            });
+            setTimeout(() => {
+                buttonOptions5.forEach(button => {
+                    button.disabled = false;
+                });
+            }, 2000);
             setTimeout(() => {
                 scenario5.style.display = "none";
                 scenario6.style.display = "flex";
@@ -240,8 +338,24 @@ buttonOptions5.forEach(button => {
             scenario5Attempts++;
             if (scenario5Attempts > 2) {
                 showHint("Scenario 5");
+                buttonOptions5.forEach(button => {
+                    button.disabled = true;
+                });
+                setTimeout(() => {
+                    buttonOptions5.forEach(button => {
+                        button.disabled = false;
+                    });
+                }, 5000);
             } else {
                 showPopup("Wrong answer. Try again!");
+                buttonOptions5.forEach(button => {
+                    button.disabled = true;
+                });
+                setTimeout(() => {
+                    buttonOptions5.forEach(button => {
+                        button.disabled = false;
+                    });
+                }, 2000);
             }
         }
     });
@@ -255,6 +369,16 @@ buttonOptions6.forEach(button => {
         if (answer === correctAnswer6) {
             scenario6Attempts++;
             showPopup("Correct! Moving to the next scenario.");
+
+            buttonOptions6.forEach(button => {
+                button.disabled = true;
+            });
+            setTimeout(() => {
+                buttonOptions6.forEach(button => {
+                    button.disabled = false;
+                });
+            }, 2000);
+
             setTimeout(() => {
                 scenario6.style.display = "none";
                 scenario7.style.display = "flex";
@@ -263,8 +387,25 @@ buttonOptions6.forEach(button => {
             scenario6Attempts++;
             if (scenario6Attempts > 2) {
                 showHint("Scenario 6");
+
+                buttonOptions6.forEach(button => {
+                    button.disabled = true;
+                });
+                setTimeout(() => {
+                    buttonOptions6.forEach(button => {
+                        button.disabled = false;
+                    });
+                }, 5000);
             } else {
                 showPopup("Wrong answer. Try again!");
+                buttonOptions6.forEach(button => {
+                    button.disabled = true;
+                });
+                setTimeout(() => {
+                    buttonOptions6.forEach(button => {
+                        button.disabled = false;
+                    });
+                }, 2000);
             }
         }
     });
@@ -278,6 +419,14 @@ buttonOptions7.forEach(button => {
         if (answer === correctAnswer7) {
             scenario7Attempts++;
             showPopup("Correct! Moving to the next scenario.");
+            buttonOptions7.forEach(button => {
+                button.disabled = true;
+            });
+            setTimeout(() => {
+                buttonOptions7.forEach(button => {
+                    button.disabled = false;
+                });
+            }, 2000);
             setTimeout(() => {
                 scenario7.style.display = "none";
                 scenario8.style.display = "flex";
@@ -286,8 +435,24 @@ buttonOptions7.forEach(button => {
             scenario7Attempts++;
             if (scenario7Attempts > 2) {
                 showHint("Scenario 7");
+                buttonOptions7.forEach(button => {
+                    button.disabled = true;
+                });
+                setTimeout(() => {
+                    buttonOptions7.forEach(button => {
+                        button.disabled = false;
+                    });
+                }, 5000);
             } else {
                 showPopup("Wrong answer. Try again!");
+                buttonOptions7.forEach(button => {
+                    button.disabled = true;
+                });
+                setTimeout(() => {
+                    buttonOptions7.forEach(button => {
+                        button.disabled = false;
+                    });
+                }, 2000);
             }
         }
     });
@@ -300,7 +465,91 @@ buttonOptions8.forEach(button => {
         const answer = button.getAttribute("data-answer");
         if (answer === correctAnswer3) {
             scenario8Attempts++;
-            showcongrats("Basta Congrats Message toh tas yung time: " + formatTime(elapsedTime));
+            console.log(scenario1Attempts, scenario2Attempts, scenario3Attempts, scenario4Attempts, scenario5Attempts, scenario6Attempts, scenario7Attempts, scenario8Attempts);
+            showcongrats("Congratulations! You have successfully prepared for the typhoon, kept your family safe, and followed all the necessary steps during the evacuation. Your readiness and quick thinking ensured everyone's safety and showed how important disaster preparedness is. ");
+            // + formatTime(elapsedTime)
+
+            const data = [
+                {
+                  student_id: parseInt(userId),
+                  disaster_id: 1,
+                  scenario_id: parseInt("1"),
+                  total_attempt: scenario1Attempts,
+                  total_spent_time: elapsedTime
+                },
+                {
+                  student_id: parseInt(userId),
+                  disaster_id: 1,
+                  scenario_id: parseInt("2"),
+                  total_attempt: scenario2Attempts,
+                  total_spent_time: elapsedTime
+                },
+                {
+                    student_id: parseInt(userId),
+                    disaster_id: 1,
+                    scenario_id: parseInt("3"),
+                    total_attempt: scenario3Attempts,
+                    total_spent_time: elapsedTime
+                  },
+                  {
+                    student_id: parseInt(userId),
+                    disaster_id: 1,
+                    scenario_id: parseInt("4"),
+                    total_attempt: scenario4Attempts,
+                    total_spent_time: elapsedTime
+                  },
+                  {
+                    student_id: parseInt(userId),
+                    disaster_id: 1,
+                    scenario_id: parseInt("5"),
+                    total_attempt: scenario5Attempts,
+                    total_spent_time: elapsedTime
+                  },
+                  {
+                    student_id: parseInt(userId),
+                    disaster_id: 1,
+                    scenario_id: parseInt("6"),
+                    total_attempt: scenario6Attempts,
+                    total_spent_time: elapsedTime
+                  },
+                  {
+                    student_id: parseInt(userId),
+                    disaster_id: 1,
+                    scenario_id: parseInt("7"),
+                    total_attempt: scenario7Attempts,
+                    total_spent_time: elapsedTime
+                  },
+                  {
+                    student_id: parseInt(userId),
+                    disaster_id: 1,
+                    scenario_id: parseInt("8"),
+                    total_attempt: scenario8Attempts,
+                    total_spent_time: elapsedTime
+                  },
+                // ...
+              ];
+              const csrfToken = document.head.querySelector('meta[name="csrf-token"]').content;
+
+                fetch('/api/progress', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    _token: csrfToken,
+                    data: data
+                })
+                })
+                .then(response => response.json())
+                .then(data => console.log(data))
+                .catch(error => console.error(error));
+
+
+            buttonOptions8.forEach(button => {
+                button.disabled = true;
+            });
+            
+
             setTimeout(() => {
                 scenario8.style.display = "none";
                 scenario8.style.display = "flex";
@@ -310,8 +559,26 @@ buttonOptions8.forEach(button => {
             scenario8Attempts++;
             if (scenario8Attempts > 2) {
                 showHint("Scenario 8");
+
+                buttonOptions8.forEach(button => {
+                    button.disabled = true;
+                });
+                setTimeout(() => {
+                    buttonOptions8.forEach(button => {
+                        button.disabled = false;
+                    });
+                }, 5000);
             } else {
                 showPopup("Wrong answer. Try again!");
+
+                buttonOptions8.forEach(button => {
+                    button.disabled = true;
+                });
+                setTimeout(() => {
+                    buttonOptions8.forEach(button => {
+                        button.disabled = false;
+                    });
+                }, 2000);
             }
         }
     });
@@ -336,6 +603,8 @@ function showcongrats(message) {
 
     
 }
+
+
 
 // Start the timer initially
 startTimer();
