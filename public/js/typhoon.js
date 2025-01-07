@@ -123,7 +123,7 @@ submitBtn.addEventListener("click", () => {
 
     const selectedValue = parseInt(slider.value);
     if (selectedValue === correctAnswer1) {
-        scenario1Attempts++;
+
         showPopup("Correct! Moving to the next scenario.");
         scenario1Choices.disabled = true;
 
@@ -181,7 +181,7 @@ checkboxes.forEach(checkbox => {
         if (selectedAnswers.length === 5) {
             if (correctAnswer2.every(a => selectedAnswers.includes(a))) {
                 console.log("Correct answer detected!");
-                scenario2Attempts++;
+                
                 showPopup("Correct! Moving to the next scenario.");
                 document.querySelector(".button-options").style.pointerEvents = "none";
             setTimeout(() => {
@@ -223,7 +223,7 @@ buttonOptions3.forEach(button => {
     button.addEventListener("click", () => {
         const answer = button.getAttribute("data-answer");
         if (answer === correctAnswer3) {
-            scenario3Attempts++;
+
             showPopup("Correct! Moving to the next scenario.");
             buttonOptions3.forEach(button => {
                 button.disabled = true;
@@ -273,7 +273,7 @@ buttonOptions4.forEach(button => {
     button.addEventListener("click", () => {
         const answer = button.getAttribute("data-answer");
         if (answer === correctAnswer4) {
-            scenario4Attempts++;
+    
             showPopup("Correct! Moving to the next scenario.");
             buttonOptions4.forEach(button => {
                 button.disabled = true;
@@ -320,7 +320,7 @@ buttonOptions5.forEach(button => {
     button.addEventListener("click", () => {
         const answer = button.getAttribute("data-answer");
         if (answer === correctAnswer5) {
-            scenario5Attempts++;
+
             showPopup("Correct! Moving to the next scenario.");
             buttonOptions5.forEach(button => {
                 button.disabled = true;
@@ -367,7 +367,7 @@ buttonOptions6.forEach(button => {
     button.addEventListener("click", () => {
         const answer = button.getAttribute("data-answer");
         if (answer === correctAnswer6) {
-            scenario6Attempts++;
+
             showPopup("Correct! Moving to the next scenario.");
 
             buttonOptions6.forEach(button => {
@@ -417,7 +417,7 @@ buttonOptions7.forEach(button => {
     button.addEventListener("click", () => {
         const answer = button.getAttribute("data-answer");
         if (answer === correctAnswer7) {
-            scenario7Attempts++;
+
             showPopup("Correct! Moving to the next scenario.");
             buttonOptions7.forEach(button => {
                 button.disabled = true;
@@ -464,7 +464,7 @@ buttonOptions8.forEach(button => {
     button.addEventListener("click", () => {
         const answer = button.getAttribute("data-answer");
         if (answer === correctAnswer3) {
-            scenario8Attempts++;
+       
             console.log(scenario1Attempts, scenario2Attempts, scenario3Attempts, scenario4Attempts, scenario5Attempts, scenario6Attempts, scenario7Attempts, scenario8Attempts);
             showcongrats("Congratulations! You have successfully prepared for the typhoon, kept your family safe, and followed all the necessary steps during the evacuation. Your readiness and quick thinking ensured everyone's safety and showed how important disaster preparedness is. ");
             // + formatTime(elapsedTime)
