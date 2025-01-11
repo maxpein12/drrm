@@ -57,7 +57,7 @@ h2 {
 }
 
 #scenario-1, #scenario-3, #scenario-5, #scenario-7 {
-    background-image: url('../assets/scenario1bg.jpg');
+    background-image: url('../assets/typhoon_bg1.gif');
     background-size: cover;
     background-position: center;
 }
