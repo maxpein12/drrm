@@ -32,7 +32,7 @@ Route::get('/admin/register', function () {
 
 Route::post('/students', [StudentsController::class, 'store'])->name('students.store');
 
-Route::post('/students', [AdminController::class, 'store'])->name('admin.store');
+Route::post('/admin', [AdminController::class, 'store'])->name('admin.store');
 
 Route::get('/disasters', [DisasterController::class, 'index'])->name('disasters.index');
 

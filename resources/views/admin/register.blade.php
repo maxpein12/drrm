@@ -16,7 +16,7 @@
     <title>Add Student</title>
 </head>
 <body>
-    <h1>Add Student</h1>
+    <h1>Add Admin</h1>
     <form method="post" action="{{ route('admin.store') }}">
         @csrf
         <label for="name">Name:</label>
