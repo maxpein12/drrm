@@ -1,0 +1,156 @@
+body {
+    font-family: "Poppins", serif;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+    background-color: rgb(238, 234, 234);
+    
+  }
+  
+  .sidebar {
+    width: 250px;
+    height: 100vh;
+    position: fixed;
+    background-color: rgb(224, 222, 222);
+    box-shadow: 20px 0 40px rgba(138, 113, 113, 0.1);
+  }
+
+  .navbar {
+    background-color: rgb(224, 222, 222);
+    box-shadow: 50px 0 100px rgba(138, 113, 113, 0.1);
+  }
+  
+  .main-content {
+    margin-left: 250px;
+    background-color: rgb(238, 234, 234);
+  }
+  
+  .nav-link.active {
+   
+    background-color: #3a7399; 
+    color: #fff;
+    width: 100%;
+  }
+  
+  .table th, .table td {
+    text-align: center;
+    max-width: 100px;
+  }
+  
+  thead {
+    background-color: #3a7399; 
+    color: #fff;
+  }
+
+  tbody > tr {
+    background-color: #ffffff; 
+  }
+
+  .table-container {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+    
+  }
+
+  #adminTable {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  #adminTable thead {
+    background-color: #3a7399;
+    color: rgb(243, 236, 236);
+  }
+
+  .btn.btn-primary {
+    background-color: orange; /* Set the background color to orange */
+    border: none; /* Remove any default border */
+    border-radius: 25px; /* Make the corners rounded */
+    color: white; /* Set the text color to white */
+    padding: 10px 20px; /* Add padding for better spacing */
+    font-size: 16px; /* Adjust the font size */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: all 0.3s ease; /* Add a smooth transition effect */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Add a shadow for the "pop-up" effect */
+}
+
+.btn.btn-primary:hover {
+    background-color: darkorange; /* Slightly darker shade on hover */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3); /* Make the shadow more pronounced on hover */
+    transform: translateY(-2px); /* Slightly move the button up to enhance the pop effect */
+}
+
+.btn.btn-primary:active {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Reduce the shadow on click */
+    transform: translateY(1px); /* Move it slightly down to simulate a click effect */
+}
+
+.btn.btn-danger {
+  background-color: rgb(216, 78, 78); /* Set the background color to red */
+  border: none; /* Remove any default border */
+  border-radius: 25px; /* Make the corners rounded */
+  color: white; /* Set the text color to white */
+  padding: 10px 20px; /* Add padding for better spacing */
+  font-size: 16px; /* Adjust the font size */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  transition: all 0.3s ease; /* Add a smooth transition effect */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Add a shadow for the "pop-up" effect */
+}
+
+.btn.btn-danger:hover {
+  background-color: rgb(187, 14, 14); /* Slightly darker shade on hover */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3); /* Make the shadow more pronounced on hover */
+  transform: translateY(-2px); /* Slightly move the button up to enhance the pop effect */
+}
+
+.btn.btn-danger:active {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Reduce the shadow on click */
+  transform: translateY(1px); /* Move it slightly down to simulate a click effect */
+}
+
+.btn.btn-warning {
+  background-color: rgb(245, 245, 51); /* Set the background color to yellow */
+  border: none; /* Remove any default border */
+  border-radius: 25px; /* Make the corners rounded */
+  color: black; /* Set the text color to black for better contrast */
+  padding: 10px 20px; /* Add padding for better spacing */
+  font-size: 16px; /* Adjust the font size */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  transition: all 0.3s ease; /* Add a smooth transition effect */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Add a shadow for the "pop-up" effect */
+}
+
+.btn.btn-warning:hover {
+  background-color: rgb(243, 221, 98); /* Slightly darker yellow shade on hover */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3); /* Make the shadow more pronounced on hover */
+  transform: translateY(-2px); /* Slightly move the button up to enhance the pop effect */
+}
+
+.btn.btn-warning:active {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Reduce the shadow on click */
+  transform: translateY(1px); /* Move it slightly down to simulate a click effect */
+}
+
+.btn.btn-success {
+  background-color: green; /* Set the background color to green */
+  border: none; /* Remove any default border */
+  border-radius: 25px; /* Make the corners rounded */
+  color: white; /* Set the text color to white */
+  padding: 10px 20px; /* Add padding for better spacing */
+  font-size: 16px; /* Adjust the font size */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  transition: all 0.3s ease; /* Add a smooth transition effect */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Add a shadow for the "pop-up" effect */
+}
+
+.btn.btn-success:hover {
+  background-color: darkgreen; /* Slightly darker shade on hover */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3); /* Make the shadow more pronounced on hover */
+  transform: translateY(-2px); /* Slightly move the button up to enhance the pop effect */
+}
+
+.btn.btn-success:active {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Reduce the shadow on click */
+  transform: translateY(1px); /* Move it slightly down to simulate a click effect */
+}
