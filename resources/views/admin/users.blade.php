@@ -30,7 +30,7 @@
         <div class="container-fluid">
           <span class="navbar-brand">Admin Dashboard</span>
           <div>
-            <span class="me-3">Hello, {{ session('logged_in_user') }}</span>
+            <span class="me-3">Hello, {{ session('logged_in_user') }} </span>
             <a href="index.html" class="btn btn-primary">Home</a>
           </div>
         </div>

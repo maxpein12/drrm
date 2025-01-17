@@ -56,30 +56,67 @@ h2 {
     text-align: justify;
 }
 
-#scenario-1, #scenario-3, #scenario-5, #scenario-7 {
-    background-image: url('../assets/typhoon_bg1.gif');
+#scenario-1{
+    background-image: url('../assets/TYPHOON_BG_DRAFT.gif');
+    background-size: cover;
+    background-position: center;
+}
+#scenario-2{
+    background-image: url('../assets/typhoon_bg2.gif');
+    background-size: cover;
+    background-position: center;
+}
+#scenario-3{
+    background-image: url('../assets/typhoon_bg3.gif');
+    background-size: cover;
+    background-position: center;
+}
+#scenario-4{
+    background-image: url('../assets/typhoon_bg4.gif');
+    background-size: cover;
+    background-position: center;
+}
+#scenario-5{
+    background-image: url('../assets/typhoon_bg5.gif');
+    background-size: cover;
+    background-position: center;
+}
+#scenario-6{
+    background-image: url('../assets/typhoon_bg6.gif');
+    background-size: cover;
+    background-position: center;
+}
+#scenario-7{
+    background-image: url('../assets/typhoon_bg7.gif');
+    background-size: cover;
+    background-position: center;
+}
+#scenario-8{
+    background-image: url('../assets/typhoon_bg8.gif');
     background-size: cover;
     background-position: center;
 }
 
-#scenario-2, #scenario-4, #scenario-6, #scenario-8 {
-    background-image: url('../assets/scenario2bg.jpg');
-    background-size: cover;
-    background-position: center;
-}
 
 /* Scenario Content */
 .scenario-content {
     flex: 2;
     display: flex;
+   
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.9); /* Slightly opaque background */
+    background-color: rgba(255, 255, 255, 0.678); /* Slightly opaque background */
     border-radius: 10px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     margin-left: 20px; /* Adds space between the left image and the content */
+}
+
+
+img:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
 }
 
 
@@ -138,20 +175,32 @@ h2 {
     display: inline-block;
     overflow: hidden;
     white-space: nowrap;
-    border-right: 2px solid;
-    animation: typing 3s steps(40, end), blink 0.75s step-end infinite;
+    
+    /* border-right: 2px solid; */
+    /* animation: typing 3s steps(40, end), blink 0.75s step-end infinite; */
     font-family: 'Comic Sans MS', cursive, sans-serif; /* Cute font for the typing effect */
 }
+.animation {
+    display: inline-block;
+    overflow: hidden;
+    border-right: 2px solid orange;
+    padding-right: 5px;
+    white-space: nowrap;
+    font-weight: lighter;
+    margin: 0 auto;
+    animation: typing 1s steps(20, end), cursor 0.5s step-end infinite;
+  }
+  
 
 @keyframes typing {
     from { width: 0; }
     to { width: 100%; }
 }
 
-@keyframes blink {
+/* @keyframes blink {
     from, to { border-color: transparent; }
     50% { border-color: black; }
-}
+} */
 
 /* Scenario 1 - Slider */
 .choice-slider {
@@ -160,6 +209,8 @@ h2 {
     justify-content: space-between;
     overflow: hidden;
 }
+
+
 
 .choice-images {
     display: flex;
@@ -195,12 +246,21 @@ input[type="range"] {
     width: 100%;
     margin: 10px 0;
 }
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 8.4px;
+    cursor: pointer;
+   
+    background: #000000;
+    border-radius: 25px;
+    
+  }
 
 input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
     width: 25px;
     height: 25px;
-    background: #ff7f50;
+    background: #1522da;
     border-radius: 50%;
     cursor: pointer;
 }
@@ -313,10 +373,19 @@ input[type="range"]::-webkit-slider-thumb {
     .btn-option {
         width: 100%;
     }
+    .btn-options {
+        width: 100%;
+    }
 }
 
 
 .button-options img {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    overflow-y: auto;
+}
+.button-optionss img {
     width: 100px;
     height: 100px;
     margin: 10px;

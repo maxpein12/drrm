@@ -217,7 +217,7 @@ checkboxes.forEach(checkbox => {
 });
 
 // Button options for Scenario 3
-const buttonOptions3 = document.querySelectorAll("#scenario-3 .btn-option");
+const buttonOptions3 = document.querySelectorAll("#scenario-3 .btn-options");
 // const scenario3Choices = document.getElementById("scenario3Choices");
 buttonOptions3.forEach(button => {
     button.addEventListener("click", () => {

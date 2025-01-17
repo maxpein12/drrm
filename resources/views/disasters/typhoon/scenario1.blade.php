@@ -29,7 +29,7 @@
                 <h2 class="mb-4">It’s a Sunday morning. You’re having breakfast with your family while watching the news.</h2>
                 <h2 class="mb-4"> The news announces that heavy rains and very strong winds are expected; damage to houses and trees is possible. Winds of 89–117 km/h are expected within 18 hours. </h2>
 
-                <p class="typewriter">{{ $scenario1->question }}</p>
+                <p class="typewriter"><span class="animation">{{ $scenario1->question }}</span></p>
 
 
                 <div class="choice-slider mt-4">
@@ -58,13 +58,13 @@
         <!-- Scenario 2 -->
         <div class="scenario-container" id="scenario-2" style="display: none;">
             <div id="timer-2" class="timer-position">00:00</div>
-            <div class="scenario-image">
+            {{-- <div class="scenario-image">
                 <img src="{{ asset('assets/news.gif') }}" alt="scenario-2" class="img-fluid">
-            </div>
+            </div> --}}
             <div class="scenario-content" id="scenario-content-2">
                 <h2 class="mb-4">You open the kitchen cabinet and find 10 items. You need to pick 5 essential items to include in your emergency survival kit.
                 </h2>
-                <p class="typewriter">{{ $scenario2->question }}</p>
+                <p class="typewriter"><span class="animation">{{ $scenario1->question }}</span></p>
 
                 <div class="button-options mt-4" id = "scenario-2-choices">
                     <input type="checkbox" id="flashlight" name="flashlight" value="Flashlight" data-answer="Flashlight">
@@ -104,20 +104,24 @@
         <!-- Scenario 3 -->
         <div class="scenario-container" id="scenario-3" style="display: none;">
             <div id="timer-3" class="timer-position">00:00</div>
-            <div class="scenario-image">
+            {{-- <div class="scenario-image">
                 <img src="{{ asset('assets/newss.gif') }}" alt="scenario-3" class="img-fluid">
-            </div>
+            </div> --}}
             <div class="scenario-content" id="scenario-content-3">
                 <h2 class="mb-4">You’re now in your bedroom. After preparing the family emergency bag, your mother asked you to  remember the emergency hotlines and agencies you would call during a typhoon.
                 </h2>
-                <p class="typewriter">{{ $scenario3->question }}
+                <p class="typewriter"><span class="animation">{{ $scenario1->question }}</span></p>
                 </p>
 
-                <div class="button-options mt-4">
-                    <button class="btn-option" data-answer="wrong" id="scenario3Choices">Philippine Red Cross</button>
-                    <button class="btn-option" data-answer="wrong" id="scenario3Choices">Philippine Coast Guard</button>
-                    <button class="btn-option" data-answer="correct" id="scenario3Choices">Department of Transportation</button>
-                    <button class="btn-option" data-answer="wrong" id="scenario3Choices">NDRRMC</button>
+                <div class="button-optionss mt-4" style="display: flex; flex-direction: column;">
+                    <div style="margin: 70px;">
+                    <button class="btn-options" data-answer="wrong" id="scenario3Choices" style="margin-right: 70px;"><img src="{{ asset('assets/16.png') }}" alt="" ></button>
+                    <button class="btn-options" data-answer="wrong" id="scenario3Choices"><img src="{{ asset('assets/16.png') }}" alt="" ></button>
+                </div>
+                <div style="margin: 70px;">
+                    <button class="btn-options" data-answer="correct" id="scenario3Choices" style="margin-right: 70px;"><img src="{{ asset('assets/16.png') }}" alt="" ></button>
+                    <button class="btn-options" data-answer="wrong" id="scenario3Choices"><img src="{{ asset('assets/16.png') }}" alt="" ></button>
+                </div>
                 </div>
             </div>
         </div>
@@ -125,13 +129,13 @@
         <!-- Scenario 4 -->
         <div class="scenario-container" id="scenario-4" style="display: none;">
             <div id="timer-4" class="timer-position">00:00</div>
-            <div class="scenario-image">
+            {{-- <div class="scenario-image">
                 <img src="{{ asset('assets/news.gif') }}" alt="scenario-4" class="img-fluid">
-            </div>
+            </div> --}}
             <div class="scenario-content" id="scenario-content-4">
                 <h2 class="mb-4">Scenario 4: Now, you have the emergency hotlines and know the agencies you can call. You must keep your communication open.
                     </h2>
-                <p class="typewriter">{{ $scenario4->question }}</p>
+                    <p class="typewriter"><span class="animation">{{ $scenario1->question }}</span></p>
 
                 <div class="button-options mt-4">
                     <button class="btn-option" data-answer="wrong">Wait for the typhoon to pass before checking your phone.</button>
@@ -145,12 +149,12 @@
            <!-- Scenario 5 -->
         <div class="scenario-container" id="scenario-5" style="display: none;">
             <div id="timer-5" class="timer-position">00:00</div>
-            <div class="scenario-image">
+            {{-- <div class="scenario-image">
                 <img src="{{ asset('assets/news.gif') }}" alt="scenario-5" class="img-fluid">
-            </div>
+            </div> --}}
             <div class="scenario-content" id="scenario-content-5">
                 <h2 class="mb-4">Scenario 5: You’re in the living room preparing to evacuate with your family, but you notice water leaking from the ceiling. To prevent further damage, you need to select and use the correct tools from the items available.</h2>
-                <p class="typewriter">{{ $scenario5->question }}</p>
+                <p class="typewriter"><span class="animation">{{ $scenario1->question }}</span></p>
                 <div>
                     1. Ladder <br> 2. Waterproof sealant <br> 3. Bucket
 
@@ -167,9 +171,9 @@
           <!-- Scenario 6 -->
           <div class="scenario-container" id="scenario-6" style="display: none;">
             <div id="timer-6" class="timer-position">00:00</div>
-            <div class="scenario-image">
+            {{-- <div class="scenario-image">
                 <img src="{{ asset('assets/news.gif') }}" alt="scenario-6" class="img-fluid">
-            </div>
+            </div> --}}
             <div class="scenario-content" id="scenario-content-6">
                 <h2 class="mb-4">Scenario 6: As you and your family
                     stay indoors, you hear a
@@ -183,7 +187,7 @@
                     your house is ready to be
                     left behind.
                     </h2>
-                <p class="typewriter">{{ $scenario6->question }}</p>
+                    <p class="typewriter"><span class="animation">{{ $scenario1->question }}</span></p>
 
                 <div class="button-options mt-4">
                     <button class="btn-option" data-answer="wrong">Leave the doors unlocked for easier access when you return.</button>
@@ -197,9 +201,9 @@
           <!-- Scenario 7 -->
           <div class="scenario-container" id="scenario-7" style="display: none;">
             <div id="timer-7" class="timer-position">00:00</div>
-            <div class="scenario-image">
+            {{-- <div class="scenario-image">
                 <img src="{{ asset('assets/news.gif') }}" alt="scenario-5" class="img-fluid">
-            </div>
+            </div> --}}
             <div class="scenario-content" id="scenario-content-7">
                 <h2 class="mb-4">Scenario 7: You and your family have
                     arrived at the evacuation
@@ -211,7 +215,7 @@
                     basic rules and procedures
                     while staying in the
                     evacuation center</h2>
-                <p class="typewriter">{{ $scenario7->question }}</p>
+                    <p class="typewriter"><span class="animation">{{ $scenario1->question }}</span></p>
 
                 <div class="button-options mt-4">
                     <button class="btn-option" data-answer="wrong">Find a comfortable spot and rest immediately.</button>
@@ -225,14 +229,14 @@
           <!-- Scenario 8 -->
           <div class="scenario-container" id="scenario-8" style="display: none;">
             <div id="timer-8" class="timer-position">00:00</div>
-            <div class="scenario-image">
+            {{-- <div class="scenario-image">
                 <img src="{{ asset('assets/news.gif') }}" alt="scenario-8" class="img-fluid">
-            </div>
+            </div> --}}
             <div class="scenario-content" id="scenario-content-8">
                 <h2 class="mb-4">Scenario 8: The typhoon is over, and
                     you’re about to step
                     outside.</h2>
-                <p class="typewriter">{{ $scenario8->question }}</p>
+                    <p class="typewriter"><span class="animation">{{ $scenario1->question }}</span></p>
 
                 <div class="button-options mt-4">
                     <button class="btn-option" data-answer="correct">Stay away from fallen trees, wrecked cars, and debris.</button>
