@@ -1,0 +1,403 @@
+/* General Styling */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+body {
+    background-color: #f0f8ff; /* Light sky blue background */
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+.navbar {
+    padding: 30px 40px;
+    background-color: #ffcc99; /* Light peach color */
+    font-size: 22px;
+    font-weight: 600;
+    color: white;
+    position: relative;
+}
+
+.navbar .btn-gray {
+    background-color: #ffffff;
+    color: #ff7f50; /* Coral color */
+    border-radius: 50px;
+    padding: 12px 30px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 40px;
+    font-weight: 600;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Scenario Container */
+.scenario-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    position: relative;
+    border: 5px solid #ff7f50; /* Cute border */
+    background-color: rgba(255, 255, 255, 0.7); /* Transparent background */
+    overflow-y: auto;
+}
+
+h2 {
+    color:#000;  
+    font-size: 20px;
+    text-align: justify;
+}
+
+#scenario-1{
+    background-image: url('../assets/volcano_bg1.gif');
+    background-size: cover;
+    background-position: center;
+}
+#scenario-2{
+    background-image: url('../assets/volcano_bg2.gif');
+    background-size: cover;
+    background-position: center;
+}
+#scenario-3{
+    background-image: url('../assets/volcano_bg3.gif');
+    background-size: cover;
+    background-position: center;
+}
+#scenario-4{
+    background-image: url('../assets/volcano_bg4.gif');
+    background-size: cover;
+    background-position: center;
+}
+#scenario-5{
+    background-image: url('../assets/volcano_bg5.gif');
+    background-size: cover;
+    background-position: center;
+}
+#scenario-6{
+    background-image: url('../assets/volcano_bg6.gif');
+    background-size: cover;
+    background-position: center;
+}
+#scenario-7{
+    background-image: url('../assets/volcano_bg7.gif');
+    background-size: cover;
+    background-position: center;
+}
+#scenario-8{
+    background-image: url('../assets/volcano_bg8.gif');
+    background-size: cover;
+    background-position: center;
+}
+
+
+/* Scenario Content */
+.scenario-content {
+    flex: 2;
+    display: flex;
+   
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.678); /* Slightly opaque background */
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    margin-left: 20px; /* Adds space between the left image and the content */
+}
+
+
+img:hover {
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+
+/* Scenario Image */
+.scenario-image {
+    flex: 1;
+    margin-right: 20px; /* Adds space between the left image and the content */
+}
+
+.scenario-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Timer Styling */
+.timer-position {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #ffebcd; /* Light beige for a soft, warm look */
+    color: #ff6347; /* Vibrant coral */
+    padding: 15px 25px;
+    border-radius: 30px; /* Rounded corners for a playful feel */
+    font-size: 26px; /* Larger font size for better readability */
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Fun font */
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+    text-align: center;
+    transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
+}
+
+/* Pulse Effect for Timer */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 15px rgba(255, 99, 71, 0.6); /* Glow effect */
+    }
+    50% {
+        transform: scale(1.1);
+        box-shadow: 0 0 30px rgba(255, 99, 71, 0.8); /* Larger glow */
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 15px rgba(255, 99, 71, 0.6); /* Glow effect */
+    }
+}
+
+/* Applying the pulse animation */
+.timer-position {
+    animation: pulse 1.5s ease-in-out infinite; /* Continuous glowing pulse */
+}
+
+/* Typewriter Effect */
+.typewriter {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    
+    /* border-right: 2px solid; */
+    /* animation: typing 3s steps(40, end), blink 0.75s step-end infinite; */
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Cute font for the typing effect */
+}
+.animation {
+    display: inline-block;
+    overflow: hidden;
+    border-right: 2px solid orange;
+    padding-right: 5px;
+    white-space: nowrap;
+    font-weight: lighter;
+    margin: 0 auto;
+    animation: typing 1s steps(20, end), cursor 0.5s step-end infinite;
+  }
+  
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+/* @keyframes blink {
+    from, to { border-color: transparent; }
+    50% { border-color: black; }
+} */
+
+/* Scenario 1 - Slider */
+.choice-slider {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+
+
+.choice-images {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    height: 100%;
+}
+
+.choice-image {
+    display: none;
+    max-width: 100%;
+    max-height: 150px;
+    margin: 0 10px;
+}
+
+.choice-image.active {
+    display: block;
+}
+
+.slider-labels {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 10px;
+    font-size: 18px;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 100%;
+    margin: 10px 0;
+}
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 8.4px;
+    cursor: pointer;
+   
+    background: #000000;
+    border-radius: 25px;
+    
+  }
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 25px;
+    height: 25px;
+    background: #1522da;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Scenario 2 & 3 - Buttons */
+.button-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.btn-option {
+    background-color: #ff7f50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.btn-option:hover {
+    background-color: #ff6347; /* Darker coral */
+    transform: scale(1.1);
+}
+
+.btn-option:active {
+    transform: scale(1);
+    box-shadow: none;
+}
+
+/* Scenario 4 - Button Options */
+.button-options-4 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.btn-option-4 {
+    background-color: #ff7f50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.btn-option-4:hover {
+    background-color: #ff6347; /* Darker coral */
+    transform: scale(1.1);
+}
+
+.btn-option-4:active {
+    transform: scale(1);
+    box-shadow: none;
+}
+
+/* Popup Styling */
+.popup, .popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    border-radius: 10px;
+}
+
+.popup.active {
+    display: block;
+}
+
+#close-popup {
+    margin-top: 20px;
+}
+
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+    .scenario-container {
+        flex-direction: column;
+        padding: 20px;
+    }
+
+    .scenario-image img {
+        width: 100%;
+        height: auto;
+    }
+
+    .scenario-content {
+        padding: 20px;
+        font-size: 18px;
+        margin-left: 0; /* Remove margin-left on smaller screens */
+        width: 100%;
+    }
+
+    .slider-labels {
+        font-size: 16px;
+    }
+
+    .btn-option {
+        width: 100%;
+    }
+    .btn-options {
+        width: 100%;
+    }
+}
+
+
+.button-options img {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    overflow-y: auto;
+}
+.button-optionss img {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    overflow-y: auto;
+}
+
+input[type="checkbox"] {
+    display: none;
+}
+
+
+input[type="checkbox"]:checked + label img {
+    border: 2px solid blue;
+    border-radius: 5px;
+}
