@@ -10,21 +10,21 @@
 </head>
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-gray">
+    {{-- <nav class="navbar navbar-expand-lg navbar-light bg-gray">
         <div class="container-fluid">
             <button class="btn btn-gray rounded" id="home-btn">Home </button>
         </div>
         
-    </nav>
+    </nav> --}}
     <div id="scenario-1-trigger" style="display: none;"></div>
     <!-- Main Container -->
-    <div class="container mt-5" style="width: 100%; height: 100%; max-width: 1600px; padding: 0 30px;">
+    <div class="container mt-5" style="width: 100%; height: 100%; max-width: 1600px; padding: 0 50px;">
         <!-- Scenario 1 -->
         <div class="scenario-container" id="scenario-1">
             <div id="timer" class="timer-position">00:00</div>
-            <div class="scenario-image">
+            {{-- <div class="scenario-image">
                 <img src="{{ asset('assets/newss.gif') }}" alt="scenario-1" class="img-fluid">
-            </div>
+            </div> --}}
             <div class="scenario-content" id="scenario-content-1">
                 <h2 class="mb-4">It’s a Sunday morning. You’re having breakfast with your family while watching the news.</h2>
                 <h2 class="mb-4"> The news announces that heavy rains and very strong winds are expected; damage to houses and trees is possible. Winds of 89–117 km/h are expected within 18 hours. </h2>
