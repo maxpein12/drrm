@@ -34,11 +34,11 @@
 
                 <div class="choice-slider mt-4">
                     <div class="choice-images" id="choice-images">
-                        <img class="choice-image" id="choice-1" src="{{ asset('assets/sig1.jpg') }}" alt="Signal 1">
-                        <img class="choice-image" id="choice-2" src="{{ asset('assets/sig2.jpg') }}" alt="Signal 2">
-                        <img class="choice-image" id="choice-3" src="{{ asset('assets/sig3.jpg') }}" alt="Signal 3">
-                        <img class="choice-image" id="choice-4" src="{{ asset('assets/sig4.jpg') }}" alt="Signal 4">
-                        <img class="choice-image" id="choice-5" src="{{ asset('assets/sig5.jpg') }}" alt="Signal 5">
+                        <img class="choice-image" id="choice-1" src="{{ asset('assets/sig1.png') }}" alt="Signal 1">
+                        <img class="choice-image" id="choice-2" src="{{ asset('assets/sig2.png') }}" alt="Signal 2">
+                        <img class="choice-image" id="choice-3" src="{{ asset('assets/sig3.png') }}" alt="Signal 3">
+                        <img class="choice-image" id="choice-4" src="{{ asset('assets/sig4.png') }}" alt="Signal 4">
+                        <img class="choice-image" id="choice-5" src="{{ asset('assets/sig5.png') }}" alt="Signal 5">
                     </div>
                 </div>
 
@@ -83,7 +83,7 @@
                     <label for="canned-goods"><img src="{{ asset('assets/canned-goods.png') }}" alt=""> Canned goods</label><br>
 
                     <input type="checkbox" id="deck-of-cards" name="deck-of-cards" value="Deck of Cards" data-answer="Deck of Cards">
-                    <label for="deck-of-cards"><img src="{{ asset('assets/deck-of-cards.png') }}" alt=""> Deck of Cards</label><br>
+                    <label for="deck-of-cards"><img src="{{ asset('assets/cards.png') }}" alt=""> Deck of Cards</label><br>
 
                     <input type="checkbox" id="blanket" name="blanket" value="Blanket" data-answer="Blanket">
                     <label for="blanket"><img src="{{ asset('assets/blanket.png') }}" alt=""> Blanket</label><br>
@@ -95,7 +95,7 @@
                     <label for="teddy-bear"><img src="{{ asset('assets/teddy-bear.png') }}" alt=""> Teddy Bear</label><br>
 
                     <input type="checkbox" id="bottled-water" name="bottled-water" value="Bottled Water" data-answer="Bottled water">
-                    <label for="bottled-water"><img src="{{ asset('assets/bottled-water.png') }}" alt=""> Bottled Water</label><br>
+                    <label for="bottled-water"><img src="{{ asset('assets/water.png') }}" alt=""> Bottled Water</label><br>
                 </div>
             
             </div>
