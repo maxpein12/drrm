@@ -5243,6 +5243,7 @@ textarea.form-control-lg {
     height: 100%;
     margin: 0;
   }
+
   .modal-fullscreen-sm-down .modal-content {
     height: 100%;
     border: 0;
@@ -6183,7 +6184,7 @@ textarea.form-control-lg {
     top: 0;
     right: 0;
     left: 0;
-    height: var(--bs-offcanvas-height);
+    height: 80.3vh; 
     max-height: 100%;
     border-bottom: var(--bs-offcanvas-border-width) solid var(--bs-offcanvas-border-color);
     transform: translateY(-100%);

@@ -33,9 +33,9 @@
         </nav>
       
         <!-- Section-->
-        <section class="" style="background-color: #EEE4C9; padding: 50px; height: 80.3vh">
-            <div class="container px-4 px-lg-5 mt-5 py-1" >
-                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+        <section class="" style="background-color: #EEE4C9; padding: 140px;">
+            <div class="container px-5 px-lg-5 mt-5 py-1" >
+                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center" >
                   
                     <div class="description">
                         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam ratione amet eum voluptas, dicta mollitia aliquid possimus ex magni odit laudantium reprehenderit architecto aut, placeat voluptatem quas animi, maxime officiis.
@@ -56,7 +56,7 @@
             </div>
         </section>
         <!-- Footer-->
-        <footer class="py-4" style="background-color: #9FB66C;">
+        <footer class="py-4" style="background-color: #9FB66C; "">
             <div class="container" style=""><p class="m-0 text-center text-white">Copyright &copy; Nuggets 2024</p></div>
         </footer>
         <!-- Bootstrap core JS-->
