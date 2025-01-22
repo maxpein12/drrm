@@ -622,13 +622,13 @@ progress {
 .container-lg,
 .container-md,
 .container-sm {
-  --bs-gutter-x: 1.5rem;
+  --bs-gutter-x: 1rem;
   --bs-gutter-y: 0;
   width: 100%;
   padding-right: calc(var(--bs-gutter-x) * 0.5);
   padding-left: calc(var(--bs-gutter-x) * 0.5);
-  margin-right: auto;
-  margin-left: auto;
+  margin-right: 1px;
+  margin-left: 100px;
 }
 
 @media (min-width: 576px) {
@@ -4621,7 +4621,7 @@ textarea.form-control-lg {
   border-radius: var(--bs-list-group-border-radius);
 }
 section {
-  height: 100vh;
+  height: 76.2vh;
   display: flex;
   flex-direction: column;
   justify-content: center;

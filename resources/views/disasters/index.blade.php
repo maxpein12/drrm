@@ -17,12 +17,12 @@
         
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg ">
-            <div class="container px-4 px-lg-5 py-2">
+            <div class="container px-1 px-lg-1 py-2">
                 <a class="navbar-brand" href="#!" >Hello,  <br>&nbsp;&nbsp;{{ session('logged_in_user') }}</a>
                
                     <form class="d-flex">
                         <a href="{{ url('landing')}}">
-                            <button class="btn" style="background-color: #FFDE59; color: #E66F51; border-radius: 50px" type="submit">
+                            <button class="btn" style=" background-color: #FFDE59; color: #E66F51; border-radius: 50px" type="submit">
                                 <i class="bi bi-house-door-fill" ></i>
                                 Home
                             </button>
