@@ -3725,7 +3725,7 @@ textarea.form-control-lg {
   --bs-navbar-brand-padding-y: 0.3125rem;
   --bs-navbar-brand-margin-end: 1rem;
   --bs-navbar-brand-font-size: 1.25rem;
-  --bs-navbar-brand-color: rgba(0, 0, 0, 0.9);
+  --bs-navbar-brand-color: rgb(255, 255, 255);
   --bs-navbar-brand-hover-color: rgba(0, 0, 0, 0.9);
   --bs-navbar-nav-link-padding-x: 0.5rem;
   --bs-navbar-toggler-padding-y: 0.25rem;
@@ -3741,6 +3741,8 @@ textarea.form-control-lg {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+  background-color: #9FB66C;
+  color: white;
   padding: var(--bs-navbar-padding-y) var(--bs-navbar-padding-x);
 }
 .navbar > .container,
@@ -10637,7 +10639,7 @@ textarea.form-control-lg {
 .card{
     margin: 5px;
     border-radius: 25px;
-    width: 200px;
+    width: 230px;
     display: flex;
     flex-direction: column;
 
@@ -10653,14 +10655,16 @@ textarea.form-control-lg {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: white;
-    border-radius: 50%;
+    /* background-color: white; */
+    /* border-radius: 50%; */
     height: 150px;
     margin-top: 25px;
   }
 
   .card-title img {
-    margin: 0 auto;
+    /* margin: 0 auto; */
+    width: 200px;
+    margin-bottom: 50px;
   }
 
   .card-text{

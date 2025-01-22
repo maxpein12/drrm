@@ -12,7 +12,7 @@ use App\Models\Scenario;
 
 Route::get('/', function () {
     return view('landing');
-});
+})->name('landing');
 
 Route::get('/student/login', function () {
     return view('student.login');

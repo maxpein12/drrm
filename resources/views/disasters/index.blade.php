@@ -14,24 +14,26 @@
         <link href="{{ asset('css/disaster-index.css') }}" rel="stylesheet" />
     </head>
     <body>
+        
         <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <div class="container px-4 px-lg-5">
-                <a class="navbar-brand" href="#!">Hello, {{ session('logged_in_user') }}</a>
+        <nav class="navbar navbar-expand-lg ">
+            <div class="container px-4 px-lg-5 py-2">
+                <a class="navbar-brand" href="#!" >Hello,  <br>&nbsp;&nbsp;{{ session('logged_in_user') }}</a>
                
                     <form class="d-flex">
-                        <button class="btn btn-outline-dark" type="submit">
-                            <i class="bi bi-house-door-fill"></i>
-                            Home
-                           
-                        </button>
+                        <a href="{{ url('landing')}}">
+                            <button class="btn" style="background-color: #FFDE59; color: #E66F51; border-radius: 50px" type="submit">
+                                <i class="bi bi-house-door-fill" ></i>
+                                Home
+                            </button>
+                        </a>
                     </form>
                 </div>
             </div>
         </nav>
       
         <!-- Section-->
-        <section class="py-5">
+        <section class="py-5" style="background-color: #EEE4C9; ">
             <div class="container px-4 px-lg-5 mt-5">
                 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                   
@@ -41,25 +43,21 @@
 
 
                     @foreach ($disasters as $disaster)
-                    <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+                    <div class="card text-white mb-3" style="max-width: 18rem; background-color: #E66F51">
                         <div class="card-header">{{ $disaster->disaster_name }}</div>
                         <div class="card-body">
                             <h5 class="card-title" id="card-title-{{ $loop->index }}">
-                                @if ($loop->index == 0)
-                                    <img src="{{ asset('assets/icons8-open-lock-48.png') }}" alt="">
-                                @else
-                                    <img src="{{ asset('assets/icons8-lock-48.png') }}" alt="">
-                                @endif
+                               <img src="{{ asset('assets/home_icon_typhoon.png') }}" alt="">
                             </h5>
-                            <p class="card-text">Click the Arrow to choose. <a href="{{ url('disasters/'.$disaster->disaster_name.'/scenario1') }}"><img src="https://www.svgrepo.com/show/507168/arrow-right-circle.svg" alt=""></a></p>
+                            <p class="card-text">Click the Arrow to choose. <a href="{{ url('disasters/'.$disaster->disaster_name.'/scenario1') }}"><img src="https://cdn-icons-png.flaticon.com/512/626/626043.png" style="background-color: #0C5D9E; filter: invert(100%); padding: 5px" alt=""></a></p>
                         </div>
                     </div>
                 @endforeach
             </div>
         </section>
         <!-- Footer-->
-        <footer class="py-5 bg-dark">
-            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Nuggets 2024</p></div>
+        <footer class="py-4" style="background-color: #9FB66C;">
+            <div class="container" style=""><p class="m-0 text-center text-white">Copyright &copy; Nuggets 2024</p></div>
         </footer>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
