@@ -18,7 +18,7 @@
     </nav> --}}
     <div id="scenario-1-trigger" style="display: none;"></div>
     <!-- Main Container -->
-    <div class="container mt-5" style="width: 100%; height: 100%; max-width: 1600px; padding: 0 50px;">
+    <div class="container " style="width: 100%; height: 100%; max-width: 1600px; padding: 0 50px;">
         <!-- Scenario 1 -->
         <div class="scenario-container" id="scenario-1">
             <div id="timer" class="timer-position">00:00</div>
