@@ -1727,6 +1727,11 @@ progress {
     --bs-gutter-y: 3rem;
   }
 }
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
 .table {
   --bs-table-color: var(--bs-body-color);
   --bs-table-bg: transparent;
@@ -4615,7 +4620,13 @@ textarea.form-control-lg {
   margin-bottom: 0;
   border-radius: var(--bs-list-group-border-radius);
 }
-
+section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .list-group-numbered {
   list-style-type: none;
   counter-reset: section;
