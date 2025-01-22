@@ -17,7 +17,7 @@
         
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg ">
-            <div class="container px-1 px-lg-1 py-3">
+            <div class="container px-4 px-lg-1 py-3">
                 <a class="navbar-brand" href="#!" >Hello,  <br>&nbsp;&nbsp;{{ session('logged_in_user') }}</a>
                
                     <form class="d-flex">
